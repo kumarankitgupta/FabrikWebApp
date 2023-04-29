@@ -19,7 +19,7 @@ function FileUpload({ onUpload }) {
       formData.append('modelname',modelName)
     
         const response = await axios.post(
-          "http://localhost:3000/senddata",
+          "https://fabreactapplication.onrender.com/senddata",
           formData,
           {
             headers:{
