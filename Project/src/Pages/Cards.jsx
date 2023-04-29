@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BsPlay } from 'react-icons/bs';
+import {useNavigate} from 'react-router-dom'
 function Cards(props) {
   const [isHovered, setIsHovered] = useState(false);
   const timestamp = props.date;
@@ -13,7 +14,7 @@ function Cards(props) {
       className="card"
       style={{ width: "20rem", marginBottom: '0.2rem', marginRight: '0.2rem', backgroundColor: '#3C4048', padding: 0, position: 'relative' }}
       onClick={()=>{
-          window.location.href = '/3dview/'+props.id
+           history('/3dview/'+props.id)
           }} 
     >
       <img src={"https://fabreactapplication.onrender.com/" + props.img} className="card-img-top img-fluid" alt="..." style={{ height: '200px' }}
