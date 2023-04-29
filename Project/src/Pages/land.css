@@ -1,0 +1,10 @@
+body{
+    background-color: #222;;
+   color:#fff
+}
+.parent-element {
+   display: flex;
+   justify-content: center;
+   margin: 0 auto;
+ }
+ 
