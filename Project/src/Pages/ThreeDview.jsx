@@ -8,7 +8,7 @@ import LoadingCube from './LoadingCube';
 
 function Model(props) {
   
-  const { scene } = useGLTF('http://localhost:3000/'+props.param);
+  const { scene } = useGLTF('https://fabreactapplication.onrender.com/'+props.param);
   return <primitive object={scene} {...props} />;
 }
 
@@ -16,7 +16,7 @@ function ThreeDview() {
   const {id} = useParams();
   const [fname,setfname] = useState(undefined);
   useEffect(()=>{
-    axios.get(`http://localhost:3000/modelname?id=${id}`)
+    axios.get(`https://fabreactapplication.onrender.com/modelname?id=${id}`)
     .then((response)=>{
       console.log(response.data.filename)
       setfname(response.data.filename)
