@@ -16,7 +16,7 @@ function Cards(props) {
           window.location.href = 'http://127.0.0.1:5173/3dview/'+props.id
           }} 
     >
-      <img src={"http://localhost:3000/" + props.img} className="card-img-top img-fluid" alt="..." style={{ height: '200px' }}
+      <img src={"https://fabreactapplication.onrender.com/" + props.img} className="card-img-top img-fluid" alt="..." style={{ height: '200px' }}
        />
       {isHovered && (
         <div
