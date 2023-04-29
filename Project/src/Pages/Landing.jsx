@@ -7,7 +7,7 @@ import axios from 'axios';
 function Landing() {
     var [arr,setarr] = useState([]);
     useEffect(()=>{
-      axios.get('http://localhost:3000/getdata')
+      axios.get('https://fabreactapplication.onrender.com/getdata')
       .then((response)=>{
         setarr(response.data)
       })
