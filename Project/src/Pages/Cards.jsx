@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BsPlay } from 'react-icons/bs';
 import {useNavigate} from 'react-router-dom'
 function Cards(props) {
+  const history = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
   const timestamp = props.date;
   const date = new Date(timestamp);
