@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-mongoose.connect("mongodb+srv://ialwaysbeachiever:J0oHoqK95zU98Fv3@cluster0.elpn1z4.mongodb.net/?retryWrites=true&w=majority/ThreeDModels");
+mongoose.connect("mongodb+srv://ialwaysbeachiever:J0oHoqK95zU98Fv3@cluster0.elpn1z4.mongodb.net/ThreeDModels");
 const express = require('express');
 const cors = require('cors');
 const fileUpload = require('express-fileupload');
