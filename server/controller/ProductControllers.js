@@ -13,7 +13,7 @@ const saveProducts = (req,res)=>{
     console.log(file)
     console.log(req.body.name);
     console.log(__dirname)
-    let uploadpath = '/Users/ankitkumargupta/Desktop/FabApp/server/upload/3dModels/'+ fname;
+    let uploadpath = process.cwd()+'/upload/3dModels/'+ fname;
     console.log(uploadpath)
     file.mv(uploadpath,(err)=>{
        if(err){
@@ -21,7 +21,7 @@ const saveProducts = (req,res)=>{
             return;
        }
     })
-     uploadpath = '/Users/ankitkumargupta/Desktop/FabApp/server/upload/image/' + iname;
+    uploadpath = process.cwd()+'/upload/image/' + iname;
     img.mv(uploadpath,(err)=>{
         if(err){
             res.status(400).send(err);
