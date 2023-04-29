@@ -13,7 +13,7 @@ function Cards(props) {
       className="card"
       style={{ width: "20rem", marginBottom: '0.2rem', marginRight: '0.2rem', backgroundColor: '#3C4048', padding: 0, position: 'relative' }}
       onClick={()=>{
-          window.location.href = 'http://127.0.0.1:5173/3dview/'+props.id
+          window.location.href = '/3dview/'+props.id
           }} 
     >
       <img src={"https://fabreactapplication.onrender.com/" + props.img} className="card-img-top img-fluid" alt="..." style={{ height: '200px' }}
