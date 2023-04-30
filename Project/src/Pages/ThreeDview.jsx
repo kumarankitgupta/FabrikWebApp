@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { useGLTF, Stage, OrbitControls } from '@react-three/drei';
+import { useGLTF, Stage, OrbitControls,useProgress } from '@react-three/drei';
 import {useParams} from 'react-router-dom';
 import axios from 'axios';
 import LoadingCube from './LoadingCube';
@@ -10,6 +10,15 @@ function Model(props) {
   
   const { scene } = useGLTF('https://fabreactapplication.onrender.com/'+props.param);
   return <primitive object={scene} {...props} />;
+}
+function Progress({ progress }) {
+  return (
+    <div className="progress-bar-container">
+      <div className="progress-bar" style={{ width: `${progress}%` }}>
+        <span className="progress-text">{progress}%</span>
+      </div>
+    </div>
+  );
 }
 
 function ThreeDview() {
@@ -25,6 +34,8 @@ function ThreeDview() {
   return (
     <>
     {typeof (fname) === 'undefined' ?<LoadingCube/>:
+    <>
+    <Progress progress={progress} />
     <Canvas dpr={[1, 2]} shadows camera={{ fov: 45 }} style={{ position: 'absolute' }}>
     <color attach="background" args={['#DDDDDD']} />
     <OrbitControls enablePan enableZoom enableRotate />
@@ -32,6 +43,7 @@ function ThreeDview() {
       <Model scale={0.029999} param={fname} />
     </Stage>
   </Canvas>
+  </>
   }
   </>
   );
