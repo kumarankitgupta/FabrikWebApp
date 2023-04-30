@@ -4,7 +4,7 @@ import { useGLTF, Stage, OrbitControls,useProgress } from '@react-three/drei';
 import {useParams} from 'react-router-dom';
 import axios from 'axios';
 import LoadingCube from './LoadingCube';
-
+import './progress.css'
 
 function Model(props) {
   
