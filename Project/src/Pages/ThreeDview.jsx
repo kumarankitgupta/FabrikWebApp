@@ -5,6 +5,7 @@ import {useParams} from 'react-router-dom';
 import axios from 'axios';
 import LoadingCube from './LoadingCube';
 import './progress.css'
+import Navbar from './Navbar';
 function Model(props) {
   const { scene } = useGLTF('https://fabreactapplication.onrender.com/'+props.param);
   return <primitive object={scene} {...props} />;
@@ -35,6 +36,7 @@ function ThreeDview() {
   
   return (
     <>
+      <Navbar/>
       {typeof (fname) === 'undefined' ?
         <LoadingCube /> :
         <>
