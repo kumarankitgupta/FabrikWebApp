@@ -1,29 +1,65 @@
-import React, { useState,useEffect } from 'react'
-import Cards from './Cards'
-import Navbar from './Navbar'
+import React, { useState, useEffect } from 'react';
+import Cards from './Cards';
+import Navbar from './Navbar';
 import LoadingCube from './LoadingCube';
-import './land.css'
 import axios from 'axios';
+import './land.css'
 function Landing() {
-    var [arr,setarr] = useState([]);
-    useEffect(()=>{
-      axios.get('https://fabreactapplication.onrender.com/getdata')
-      .then((response)=>{
-        setarr(response.data)
-      })
-    },[])
+  const [arr, setArr] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  useEffect(() => {
+    axios.get('https://fabreactapplication.onrender.com/getdata')
+      .then(response => {
+        setArr(response.data);
+      });
+  }, []);
+
+  const filteredArr = arr.filter(val =>
+    val.Model_name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <>
-    <Navbar/>
-    <div className='row center parent-element flex-left' style={{marginTop:'80px',marginLeft:0,marginRight:0,padding:'2%' }}>
-        {arr.length === 0?<LoadingCube/>:arr.map((val,index)=>{
-            return (<Cards key={index} img={val.ThumbNail_Name} model_name={val.Model_name} creator_name={val.Creator_Name} date={val.dateCreated} id={val._id}/>
-            )
-        })}
-        
-    </div>
+      <Navbar />
+      <div className='container' style={{ marginTop: '80px' }}>
+        <div className='row justify-content-center mb-4'>
+          <div className='col-md-6'>
+            <div className='input-group'>
+              <input
+                type='text'
+                className='form-control'
+                placeholder='Search by model name'
+                value={searchTerm}
+                onChange={e => setSearchTerm(e.target.value)}
+              />
+              <div className='input-group-append'>
+                <button className='btn btn-primary' type='button'>
+                  Search
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='row center parent-element flex-left'>
+          {filteredArr.length === 0 ? (
+            <LoadingCube />
+          ) : (
+            filteredArr.map((val, index) => (
+              <Cards
+                key={index}
+                img={val.ThumbNail_Name}
+                model_name={val.Model_name}
+                creator_name={val.Creator_Name}
+                date={val.dateCreated}
+                id={val._id}
+              />
+            ))
+          )}
+        </div>
+      </div>
     </>
-  )
+  );
 }
 
-export default Landing
+export default Landing;
