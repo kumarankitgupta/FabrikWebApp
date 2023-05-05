@@ -14,6 +14,6 @@ app.use(fileUpload())
 app.post('/senddata',saveProducts)
 app.get('/getdata',getModels)
 app.get('/modelname',getmodelname)
-app.listen(process.env.PORT || 3000,()=>{
-    console.log('server Started at port '+ process.env.PORT)
+app.listen(3000,()=>{
+    console.log('server Started at port '+ 3000)
 })
