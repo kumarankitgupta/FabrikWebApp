@@ -9,7 +9,7 @@ function Landing() {
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    axios.get('http://13.232.17.133:3001/getdata')
+    axios.get('https://fabreactapplication.onrender.com/getdata')
       .then(response => {
         setArr(response.data);
       });
