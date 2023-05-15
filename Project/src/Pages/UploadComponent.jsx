@@ -19,7 +19,7 @@ function FileUpload({ onUpload }) {
       formData.append('modelname',modelName)
     
         const response = await axios.post(
-          "https://fabreactapplication.onrender.com/senddata",
+          "https://main--velvety-praline-56c3a3.netlify.app/api/senddata",
           formData,
           {
             headers:{
