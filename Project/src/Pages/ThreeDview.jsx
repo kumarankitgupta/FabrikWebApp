@@ -25,7 +25,7 @@ function ThreeDview() {
   const { id } = useParams();
   const [fname, setfname] = useState(undefined);
   useEffect(() => {
-    axios.get(`https://fabreactapplication.onrender.com/modelname?id=${id}`)
+    axios.get(`https://main--velvety-praline-56c3a3.netlify.app/api/modelname?id=${id}`)
       .then((response) => {
         console.log(response.data.filename)
         setfname(response.data.filename)
