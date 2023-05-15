@@ -18,7 +18,7 @@ function Cards(props) {
            history('/3dview/'+props.id)
           }} 
     >
-      <img src={"https://fabreactapplication.onrender.com/" + props.img} className="card-img-top img-fluid" alt="..." style={{ height: '200px' }}
+      <img src={"https://main--velvety-praline-56c3a3.netlify.app/api/" + props.img} className="card-img-top img-fluid" alt="..." style={{ height: '200px' }}
        />
       {isHovered && (
         <div
