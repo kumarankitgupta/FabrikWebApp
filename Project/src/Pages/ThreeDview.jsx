@@ -7,7 +7,7 @@ import LoadingCube from './LoadingCube';
 import './progress.css'
 import Navbar from './Navbar';
 function Model(props) {
-  const { scene } = useGLTF('https://fabreactapplication.onrender.com/'+props.param);
+  const { scene } = useGLTF('https://main--velvety-praline-56c3a3.netlify.app/api/'+props.param);
   return <primitive object={scene} {...props} />;
 }
 
