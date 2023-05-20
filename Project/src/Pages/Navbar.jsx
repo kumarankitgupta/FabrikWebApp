@@ -5,7 +5,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
     <div className="container-fluid">
      <Link to='/' className="navbar-brand">
-      <img src='https://uploads-ssl.webflow.com/63173e7c7217334216b1ad0e/63173ed5b801ed0f3d0e0709_fabrik_logo.png' style={{height:'30px'}}/>
+      <img src='https://codequotient.com/icons/logo2.png' style={{height:'30px'}}/>
       </Link>
       <button
         className="navbar-toggler"
