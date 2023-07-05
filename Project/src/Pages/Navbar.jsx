@@ -5,7 +5,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
     <div className="container-fluid">
      <Link to='/' className="navbar-brand">
-      <img src='https://codequotient.com/icons/logo2.png' style={{height:'30px'}}/>
+      <img src='https://w7.pngwing.com/pngs/916/44/png-transparent-pay-gold-three-number-digit-3d-light-fill-mass-quantum-thumbnail.png' style={{height:'30px'}}/>
       </Link>
       <button
         className="navbar-toggler"
